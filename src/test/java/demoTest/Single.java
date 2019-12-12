@@ -1,6 +1,8 @@
 package demoTest;
 
-public class Single {
+import java.io.Serializable;
+
+public class Single implements Serializable {
     //内部类实现单例
     public final static String name = "youyi";
     private Single(){}
@@ -16,6 +18,9 @@ public class Single {
             System.out.println(Single.getInstance().name);
         });
         thread.start();
+    }
+    public Single readResolve(){
+        return SingleHolder.instance;
     }
 
 }

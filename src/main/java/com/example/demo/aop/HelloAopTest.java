@@ -21,6 +21,7 @@ import java.util.Map;
 @Aspect
 @Component
 public class HelloAopTest {
+    //  这样拦截没用
     @Pointcut("execution(* com.example.demo.service..HelloUse(..))")
     private void poid2(){};
     // 没办法拦截内部方法的调用，如果需要拦截，那么需要获取到代理对象
@@ -34,10 +35,16 @@ public class HelloAopTest {
      * 定义Pointcut，Pointcut名称为aspectjMethod,必须无参，无返回值
      * 只是一个标识，并不进行调用
      */
-    @Pointcut("execution(* com.example.demo.service..*(..))")
+    @Pointcut("execution(* com.example.demo.service.impl.DemoServiceImpl.*(..))")
     private void aspectJMethod(){};
 
-    @Before("aspectJMethod()")
+    /**
+     * 还可以切注解
+     */
+    @Pointcut("@annotation(com.example.demo.annotationTest.MyAnnotation)")
+    private void aspectAnnotation(){};
+
+    @Before("aspectAnnotation()")
     public void doBefore(JoinPoint joinPoint){
         System.out.println("----dobefore()开始----");
         System.out.println("执行业务逻辑前做一些工作");
@@ -91,6 +98,8 @@ public class HelloAopTest {
         //核心逻辑
         //传入的新的参数去执行目标方法
         Object retval=pjp.proceed(new Object[]{"new YOUyi"});
+
+
         System.out.println("此处可做一些类似after的工作");
         System.out.println("----doAround()结束----");
 

@@ -10,6 +10,7 @@ import java.util.Map;
 
 /**
  * Created by yi.you on 2018/8/9.
+ * 自定义注解和
  */
 @Service
 @MyAnnotation(title="ClassDemoServiceImpl",actType = "DemoServiceImpl")
