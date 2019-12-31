@@ -2,7 +2,6 @@ package com.example.demo.service.impl;
 
 import com.example.demo.annotationTest.MyAnnotation;
 import com.example.demo.service.DemoService;
-import org.aspectj.lang.annotation.Around;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
