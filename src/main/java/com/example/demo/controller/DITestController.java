@@ -22,10 +22,13 @@ public class DITestController {
 
     @Resource
     ApplicationContextConfig config;
+
     @Resource(name = "youyi")
     User user;
+
     @Resource
     Word word;
+
     @Autowired
     XihaWord xihaWord;
 

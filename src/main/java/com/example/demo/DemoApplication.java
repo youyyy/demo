@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
+/*这里给注册上了word*/
 @ImportResource(locations = "classpath:xml/Beans.xml")
 public class DemoApplication {
 
