@@ -15,6 +15,7 @@ package com.example.demo.util.springtest;
    高山仰止,景行行止.虽不能至,心向往之。
 */
 
+import jdk.internal.org.xml.sax.InputSource;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
@@ -34,7 +35,7 @@ public class Test {
     public static void main(String[] args) throws IOException {
         Resource resource = new ClassPathResource("word.properties");
         InputStream inputStream = resource.getInputStream();
-
+        InputSource inputSource = new InputSource(inputStream);
         Properties properties = new Properties();
         properties.load(inputStream);
         System.out.println(properties.getProperty("message"));

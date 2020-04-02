@@ -9,6 +9,7 @@
         <property name="message" value="Hello World!"/>
     </bean>
 <!--    <context:property-placeholder location="classpath:/word.properties"/>-->
-
+<!--    <alias name="word" alias="kk"></alias>-->
+<!--    <import resource="Beans.xml"></import>-->
 
 </beans>
