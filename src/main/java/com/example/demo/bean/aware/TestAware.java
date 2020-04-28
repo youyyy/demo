@@ -43,8 +43,8 @@ public class TestAware implements BeanFactoryAware {
 
     public static void main(String[] args) {
         // 需要写一下
-        ApplicationContext ct = new ClassPathXmlApplicationContext("applicationContext.xml");
-        TestAware testAware = (TestAware) ct.getBean("test");
+        ApplicationContext ct = new ClassPathXmlApplicationContext("classpath:xml/Hello.xml");
+        TestAware testAware = (TestAware) ct.getBean("testAware");
         testAware.testAware();
     }
 }
