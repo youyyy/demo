@@ -15,6 +15,7 @@ package com.example.demo.bean.context;
    高山仰止,景行行止.虽不能至,心向往之。
 */
 
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
