@@ -21,7 +21,7 @@ import java.lang.reflect.Proxy;
 
 /**
  * @program: demo
- * @description: 用于对接口提供的方法进行增强
+ * @description: 用于对接口提供的方法进行增强 jdk proxy
  * @author: youyi
  * @create: 2020-04-30 14:40
  **/
