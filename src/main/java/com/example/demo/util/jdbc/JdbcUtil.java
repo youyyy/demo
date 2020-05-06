@@ -15,6 +15,8 @@ package com.example.demo.util.jdbc;
    高山仰止,景行行止.虽不能至,心向往之。
 */
 
+import org.springframework.jdbc.core.JdbcTemplate;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
