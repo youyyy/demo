@@ -22,7 +22,7 @@ import java.sql.Types;
 
 /**
  * @program: demo
- * @description: jdbcTemplate观察用例
+ * @description: jdbcTemplate观察用例 不具备数据库连接
  * @author: youyi
  * @create: 2020-04-30 16:29
  **/
@@ -36,5 +36,6 @@ public class JdbcHelper {
     public void update(){
         jdbcTemplate.update("insert into user(name,age) values (?,?)",new Object[]{1,1},new int[]{Types.VARCHAR, Types.INTEGER});
 
+//        jdbcTemplate.query("", new Object[]{20}, new int[]{Types.INTEGER}, new RowMapper());
     }
 }
