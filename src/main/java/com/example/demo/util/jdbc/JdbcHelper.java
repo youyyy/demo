@@ -35,5 +35,6 @@ public class JdbcHelper {
     }
     public void update(){
         jdbcTemplate.update("insert into user(name,age) values (?,?)",new Object[]{1,1},new int[]{Types.VARCHAR, Types.INTEGER});
+
     }
 }
