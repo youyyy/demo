@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * @program: demo
- * @description: description
+ * @description: 拦截器
  * @author: youyi
  * @create: 2020-05-09 11:10
  **/
