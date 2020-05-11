@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ImportResource;
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class},scanBasePackages = "com.example.demo")
+@SpringBootApplication(scanBasePackages = "com.example.demo")
 /*这里给注册上了word*/
 @ImportResource(locations = "classpath:xml/Beans.xml")
 public class DemoApplication {
