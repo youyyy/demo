@@ -35,6 +35,13 @@ spring:
     suffix: .html
   mvc:
     static-path-pattern: /static/**
+  # elasticsearch配置
+  data:
+    elasticsearch:
+      cluster-name: docker-cluster
+      cluster-nodes: localhost:9300
+      repositories:
+        enabled: true
 mybatis:
   ##指向mapper的xml文件位置
   mapper-locations: /mapper/**.xml
