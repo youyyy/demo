@@ -51,14 +51,14 @@ public class ESController {
         tutorial.setName("elastic search");
 
         Article article = new Article();
-        article.setId(1L);
-        article.setTitle("游移 integreate elasticsearch");
+        article.setId(2L);
+        article.setTitle("游移 呵呵 integreate elasticsearch");
         article.setAbstracts("游移 integreate elasticsearch is very easy");
         article.setTutorial(tutorial);
         article.setAuthor(author);
         article.setContent("elasticsearch based 游移 lucene,"
                 + "spring-data-elastichsearch based on elaticsearch"
-                + ",this tutorial 游移 you how to integrete 游移 with spring-data-elasticsearch");
+                + ",this tutorial 游移 呵呵 you how to integrete 游移 呵呵 with spring-data-elasticsearch");
         article.setPostTime(System.currentTimeMillis()/1000);
         article.setClickCount(1L);
 
@@ -66,7 +66,7 @@ public class ESController {
     }
     @GetMapping("/query")
     public Results testSearch() {
-        String queryString = "游移";//搜索关键字
+        String queryString = "游呵呵";//搜索关键字
         QueryStringQueryBuilder builder = new QueryStringQueryBuilder(queryString);
         Iterable<Article> searchResult = articleSearchRepository.search(builder);
         Iterator<Article> iterator = searchResult.iterator();
