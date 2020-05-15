@@ -1,5 +1,6 @@
 package com.example.demo.util.StudyJDK.UtilTest;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -18,6 +19,9 @@ public class LinkedListTest {
 
         System.out.println(linkedList.get(1).getClass().equals(String.class));
         test();
+
+
+        sortLinkedList();
     }
     private static void test(){
         LinkedList<Dog> linkedList = new LinkedList<>();
@@ -64,5 +68,15 @@ public class LinkedListTest {
                     "name='" + name + '\'' +
                     '}';
         }
+    }
+
+    public static void sortLinkedList(){
+        // 子类没实现排序的list用list接口的归并排序
+        List<Integer> a = new LinkedList<>();
+        a.add(10);
+        a.add(1);
+        System.out.println(a);
+        Collections.sort(a);
+        System.out.println(a);
     }
 }
