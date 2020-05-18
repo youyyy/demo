@@ -15,6 +15,7 @@ package com.example.demo.filterAndInterceptor;
    高山仰止,景行行止.虽不能至,心向往之。
 */
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -27,6 +28,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author: youyi
  * @create: 2020-05-09 11:10
  **/
+@Component
 public class MyInterceptor implements HandlerInterceptor {
     long start = System.currentTimeMillis();
     @Override

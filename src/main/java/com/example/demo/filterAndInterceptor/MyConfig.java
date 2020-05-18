@@ -15,6 +15,7 @@ package com.example.demo.filterAndInterceptor;
    高山仰止,景行行止.虽不能至,心向往之。
 */
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,10 +30,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  **/
 @Configuration
 public class MyConfig extends WebMvcConfigurerAdapter {
+    @Autowired
+    private MyInterceptor myInterceptor;
+    @Autowired
+    private MyFilter myFilter;
     @Bean
     public FilterRegistrationBean registerFilter() {
         FilterRegistrationBean registration = new FilterRegistrationBean();
-        registration.setFilter(new MyFilter());
+        registration.setFilter(myFilter);
         registration.addUrlPatterns("/*");
         registration.setName("myFilter");
         registration.setOrder(1);
@@ -41,7 +46,7 @@ public class MyConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(myInterceptor).addPathPatterns("/**");
         super.addInterceptors(registry);
     }
 }
