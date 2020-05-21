@@ -19,8 +19,8 @@ public class Context {
     private Condition removeCondition = lock.newCondition();
 
     public void add(String value){
+        lock.lock();
         try{
-            lock.lock();
             while (list.size()>=10) {
                 addCondition.await();
             }
@@ -35,8 +35,8 @@ public class Context {
     }
 
     public void remove(){
+        lock.lock();
         try{
-            lock.lock();
             while (list.size()<1) {
                 removeCondition.await();
             }

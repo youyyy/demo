@@ -14,8 +14,8 @@ public class Context {
     private Lock lock = new ReentrantLock();
     private Condition condition = lock.newCondition();
     public void await(){
+        lock.lock();
         try {
-            lock.lock();
             System.out.println("await,time="+System.currentTimeMillis());
             condition.await();
         }catch (InterruptedException e){
@@ -25,8 +25,8 @@ public class Context {
         }
     }
     public void signal(){
+        lock.lock();
         try{
-            lock.lock();
             System.out.println("signal,time="+System.currentTimeMillis());
             condition.signal();
         }finally {

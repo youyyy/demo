@@ -7,10 +7,7 @@ import com.fasterxml.jackson.databind.util.JSONPObject;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by yi.you on 2018/8/14.
@@ -34,5 +31,9 @@ public class TestUtil {
         List<String> list = new ArrayList<String>();
         map.put("list",list);
         System.out.println(map.get("list").toString());
+
+        List a = Collections.synchronizedList(Arrays.asList(11));
+
+
     }
 }
