@@ -30,6 +30,8 @@ public class SynchronousQueueTest {
         SynchronousQueue<Integer> queue = new SynchronousQueue<Integer>();
 
         new Product(queue).start();
+        new Product(queue).start();
+        new Customer(queue).start();
         new Customer(queue).start();
     }
     static class Product extends Thread{
@@ -42,9 +44,10 @@ public class SynchronousQueueTest {
             while(true){
                 int rand = new Random().nextInt(1000);
                 System.out.println("生产了一个产品："+rand);
-                System.out.println("等待三秒后运送出去...");
                 try {
+                    System.out.println("等待三秒后运送出去...");
                     TimeUnit.SECONDS.sleep(3);
+                    System.out.println("wait,thread="+Thread.currentThread().getName());
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -67,7 +70,7 @@ public class SynchronousQueueTest {
         public void run(){
             while(true){
                 try {
-                    System.out.println("消费了一个产品:"+queue.take());
+                    System.out.println("消费了一个产品:"+queue.take()+",thread="+Thread.currentThread().getName());
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
