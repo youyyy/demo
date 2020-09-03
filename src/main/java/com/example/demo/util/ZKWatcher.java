@@ -19,15 +19,13 @@ import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.api.CuratorWatcher;
 import org.apache.curator.retry.RetryNTimes;
-import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.WatchedEvent;
-import org.apache.zookeeper.ZooDefs;
 
 import java.util.List;
 
 /**
  * @program: demo
- * @description: zookeeper客户端
+ * @description: zookeeper客户端:后续考虑可以用来提供接口拉zk数据节点Znode
  *
  * 去掉guava
  *
