@@ -38,4 +38,13 @@ public class JdbcHelper {
 
 //        jdbcTemplate.query("", new Object[]{20}, new int[]{Types.INTEGER}, new RowMapper());
     }
+
+    public static void main(String[] args) {
+        Runtime.getRuntime().addShutdownHook(new Thread(){
+            @Override
+            public void run(){
+
+            }
+        });
+    }
 }
