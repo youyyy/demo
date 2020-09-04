@@ -15,7 +15,7 @@ import java.util.Set;
 import static java.lang.Thread.sleep;
 
 /**
- * @Description
+ * @Description 延时队列
  * @Author youyi
  * @Date 2019/9/4 下午9:30
  **/
@@ -64,6 +64,7 @@ public class QueueTest {
             addToDeplayQueue(task);
             Thread.sleep(100);
         }
+        // 类似定时缓慢消费
         new QueueTest().domain();
 
     }
