@@ -31,9 +31,9 @@ public class AnotherProxy implements MethodInterceptor {
     public Object intercept(Object object, Method method, Object[] objects, MethodProxy proxy) throws Throwable {
 
         System.out.println("StartTime=[" + System.currentTimeMillis() + "]");
-        proxy.invokeSuper(object, objects);
+        Object obj = proxy.invokeSuper(object, objects);
         System.out.println("EndTime=[" + System.currentTimeMillis() + "]");
-        return object;
+        return obj;
     }
 
 }

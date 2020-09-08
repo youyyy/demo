@@ -40,14 +40,12 @@ public class Doo {
         System.out.println(targetObject2.method3(200));
     }
 
-    /**
-     * 有异常
-     */
     private void testAnother(){
         AnotherProxy proxy = new AnotherProxy();
         MyMethodInterceptor myMethodInterceptor = new MyMethodInterceptor();
 
         Enhancer enhancer =new Enhancer();
+        enhancer.setClassLoader(DoTestFun.class.getClassLoader());
         enhancer.setSuperclass(DoTestFun.class);
         enhancer.setCallbacks(new Callback[] {myMethodInterceptor,proxy, NoOp.INSTANCE});
         enhancer.setCallbackFilter(new AotherFilter());
