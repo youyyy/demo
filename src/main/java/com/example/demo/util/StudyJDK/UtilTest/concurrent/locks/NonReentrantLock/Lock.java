@@ -1,4 +1,4 @@
-package com.example.demo.util.StudyJDK.UtilTest.concurrent.NonReentrantLock;/*
+package com.example.demo.util.StudyJDK.UtilTest.concurrent.locks.NonReentrantLock;/*
           .--,       .--,
          ( (  \.---./  ) )
           '.__/o   o\__.'
