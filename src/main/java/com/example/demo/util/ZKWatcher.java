@@ -27,6 +27,7 @@ import java.util.List;
  * @program: demo
  * @description: zookeeper客户端:后续考虑可以用来提供接口拉zk数据节点Znode
  *
+ * 我的zk版本低了，不能用guava26。
  * 去掉guava
  *
  * @author: youyi
