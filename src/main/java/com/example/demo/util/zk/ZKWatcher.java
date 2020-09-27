@@ -1,4 +1,4 @@
-package com.example.demo.util;/*
+package com.example.demo.util.zk;/*
           .--,       .--,
          ( (  \.---./  ) )
           '.__/o   o\__.'
@@ -20,6 +20,7 @@ import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.api.CuratorWatcher;
 import org.apache.curator.retry.RetryNTimes;
 import org.apache.zookeeper.WatchedEvent;
+import org.apache.zookeeper.Watcher;
 
 import java.util.List;
 
@@ -39,6 +40,7 @@ public class ZKWatcher {
         CuratorFramework client = CuratorFrameworkFactory.newClient("127.0.0.1:2181", new RetryNTimes(10, 5000));
         client.start();
         try {
+            // zk用Curator客户端实现watcher机制
             List<String> c = client.getChildren().usingWatcher(new CuratorWatcher() {
                 @Override
                 public void process(WatchedEvent watchedEvent) throws Exception {
