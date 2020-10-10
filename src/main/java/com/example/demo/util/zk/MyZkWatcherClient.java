@@ -31,6 +31,7 @@ public class MyZkWatcherClient implements Watcher {
         switch (type) {
             case NodeCreated:
                 System.out.println("新建节点:" + watchedEvent.getPath());
+            default:
         }
     }
 }
