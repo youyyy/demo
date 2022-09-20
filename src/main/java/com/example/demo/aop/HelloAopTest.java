@@ -44,6 +44,9 @@ public class HelloAopTest {
     @Pointcut("@annotation(com.example.demo.annotationTest.MyAnnotation)")
     private void aspectAnnotation(){};
 
+    @Pointcut("@within(com.example.demo.annotationTest.MyAnnotation)")
+    public void withAnnotation(){};
+
     @Before("aspectAnnotation()")
     public void doBefore(JoinPoint joinPoint){
         System.out.println("----dobefore()开始----");

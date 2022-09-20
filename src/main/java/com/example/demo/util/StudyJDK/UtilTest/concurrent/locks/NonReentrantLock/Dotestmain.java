@@ -33,6 +33,7 @@ public class Dotestmain {
             try {
                 lock.lock();
                 System.out.println("1");
+                lock.unlock();
                 lock.lock();
                 System.out.println("2");
             } catch (InterruptedException e) {

@@ -26,9 +26,13 @@ import java.io.*;
  **/
 public class IOTest {
     public static void main(String[] args) {
-        writeTxt("/Users/youyi/IdeaProjects/demo/src/main/java/com/example/demo/util/StudyJDK/ioANDnio/a.txt","hhh");
-        String s = readTxt("/Users/youyi/IdeaProjects/demo/src/main/java/com/example/demo/util/StudyJDK/ioANDnio/a.txt");
-        System.out.println(s);
+//        writeTxt("/Users/youyi/IdeaProjects/demo/src/main/java/com/example/demo/util/StudyJDK/ioANDnio/a.txt","hhh");
+//        String s = readTxt("/Users/youyi/IdeaProjects/demo/src/main/java/com/example/demo/util/StudyJDK/ioANDnio/a.txt");
+//        System.out.println(s);
+
+        String s = readTxt("/Users/youyi/Desktop/over.txt");
+        String[] numbers = s.split(",");
+
     }
 
 

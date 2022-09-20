@@ -34,6 +34,9 @@ public class RejectedPolicyWithReport implements RejectedExecutionHandler {
 
     private static final long TEN_MINUTES_MILLS = 10 * 60 * 1000;
 
+    /**
+     * todo 这个是干嘛的
+     */
     private static Semaphore guard = new Semaphore(1);
     @Override
     public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
