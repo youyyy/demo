@@ -29,7 +29,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.2.30</version>
+			<version>1.2.83</version>
 		</dependency>
 
 		<!--Apache Commons Lang，一个Java实用程序类包，-->
