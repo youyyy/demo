@@ -31,6 +31,7 @@ public class CyclicBarrierTest {
             new ThreadPoolExecutor.CallerRunsPolicy());
     public static void main(String[] args) {
         // 达成后触发，可以重复用
+        // 栅栏
         CyclicBarrier lock = new CyclicBarrier(10,()-> System.out.println("10次执行完了"));
 
         for (int i = 0; i < 10; i++) {

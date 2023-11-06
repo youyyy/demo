@@ -18,6 +18,8 @@ import cn.hutool.core.io.FileUtil;
 import com.google.common.base.Splitter;
 import org.elasticsearch.common.Strings;
 
+import java.io.File;
+import java.math.BigDecimal;
 import java.util.*;
 
 /**
@@ -27,15 +29,19 @@ import java.util.*;
  * @create: 2021/9/15
  **/
 public class FileUtils {
-    private static String a = "curl --location --request GET 'http://10.85.128.89:8000/wujie/wms/pick/inner/task/releasePickingTaskStockAndUpdateStatus?&taskPickingNo=%s' \\\n" +
-            "--header 'warehouse-code: 30-135-000005'";
+    private static String txt = "curl -X \"POST\" \"http://gateway.tanjiu.cn/wf//lyfw/backdoor/reduceBenefit\" \\\n" +
+            "-H 'token: openApi' \\\n" +
+            "-H 'Content-Type: application/json' \\\n" +
+            "-d '{  \"serialNumberAndMoney\": [    \"%s\"  ]}' \\";
 
     public static void main(String[] args) {
-        List<String> kmmz = FileUtil.readLines(FileUtil.newFile("/Users/youyi/Desktop/w1.txt"), "UTF-8");
+        List<String> kmmz = FileUtil.readLines(FileUtil.newFile("/Users/youyi/Desktop/11.txt"), "UTF-8");
+        File file = FileUtil.newFile("/Users/youyi/Desktop/11test.sh");
 
         for (String string : kmmz) {
-            String[] split = Strings.split(string, ",");
-            System.out.println(split[0]);
+            FileUtil.appendString(String.format(txt,string),file,"UTF-8");
+            FileUtil.appendString("\n",file,"UTF-8");
+            FileUtil.appendString("\n",file,"UTF-8");
         }
 
 
