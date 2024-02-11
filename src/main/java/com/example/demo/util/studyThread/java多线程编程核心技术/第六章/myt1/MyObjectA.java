@@ -8,7 +8,7 @@ package com.example.demo.util.studyThread.java多线程编程核心技术.第六
  * @create: 2019-11-13 20:06
  **/
 public class MyObjectA {
-    private static MyObjectA object;
+    private volatile static MyObjectA object;
 
     private MyObjectA(){
 

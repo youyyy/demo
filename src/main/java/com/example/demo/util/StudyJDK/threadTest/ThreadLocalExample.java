@@ -1,5 +1,8 @@
 package com.example.demo.util.StudyJDK.threadTest;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @program: demo
  * @description: description  测试ThreadLocal
@@ -13,6 +16,8 @@ public class ThreadLocalExample {
 
 
         private ThreadLocal threadLocal = new ThreadLocal();
+
+        private ThreadLocal<Map<String,Object>> threadLocal2 = ThreadLocal.withInitial(HashMap::new);
 
 
         @Override

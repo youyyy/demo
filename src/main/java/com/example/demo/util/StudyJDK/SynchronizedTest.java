@@ -42,6 +42,7 @@ public class SynchronizedTest implements Runnable{
         Thread t2 = new Thread(test);
         t1.start();
         t2.start();
+        // 主线程等1 2 执行完
         t1.join();
         t2.join();
         System.out.println(i);
