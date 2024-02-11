@@ -20,7 +20,7 @@ import java.io.*;
 
 /**
  * @program: demo
- * @description: java读写文件
+ * @description: java读写文件 字节流，建议用于音频图像。。用于字符可能会出现编码问题（如中文）
  * @author: youyi
  * @create: 2020-05-22 19:44
  **/
