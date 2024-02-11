@@ -17,6 +17,7 @@ package com.example.demo.util.StudyJDK.ioANDnio;
 
 
 import java.io.*;
+import java.util.Arrays;
 
 /**
  * @program: demo
@@ -30,40 +31,38 @@ public class IOTest {
 //        String s = readTxt("/Users/youyi/IdeaProjects/demo/src/main/java/com/example/demo/util/StudyJDK/ioANDnio/a.txt");
 //        System.out.println(s);
 
-        String s = readTxt("/Users/youyi/Desktop/over.txt");
-        String[] numbers = s.split(",");
-
+        String s = readTxt("/Users/youyi/Desktop/11.txt");
+        String[] numbers = s.split("\n");
+        Arrays.stream(numbers).forEach(System.out::println);
     }
 
 
-    public static void writeTxt(String txtPath,String content){
-        FileOutputStream fileOutputStream = null;
+    public static void writeTxt(String txtPath, String content) throws IOException {
+
         File file = new File(txtPath);
-        try {
-            if(file.exists()){
-                //判断文件是否存在，如果不存在就新建一个txt
-                file.createNewFile();
-            }
-            fileOutputStream = new FileOutputStream(file);
-            fileOutputStream.write(content.getBytes());
-            fileOutputStream.flush();
-            fileOutputStream.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (file.exists()) {
+            //判断文件是否存在，如果不存在就新建一个txt
+            file.createNewFile();
+        }
+        try (FileOutputStream fileOutputStream = new FileOutputStream(file);
+             BufferedOutputStream bos = new BufferedOutputStream(fileOutputStream)) {
+            bos.write(content.getBytes());
+            bos.flush();
+        } catch (IOException e) {
+
         }
     }
 
     public static String readTxt(String txtPath) {
         File file = new File(txtPath);
-        if(file.isFile() && file.exists()){
-            try {
-                FileInputStream fileInputStream = new FileInputStream(file);
-                InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
-                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        if (file.isFile() && file.exists()) {
+            try (FileInputStream fileInputStream = new FileInputStream(file);
+                 InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
+                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader)) {
 
                 StringBuffer sb = new StringBuffer();
                 String text = null;
-                while((text = bufferedReader.readLine()) != null){
+                while ((text = bufferedReader.readLine()) != null) {
                     sb.append(text);
                 }
                 return sb.toString();
